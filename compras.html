@@ -26,9 +26,9 @@
         <p class="subtitulo-griego">Adquiere las reliquias y tributos de los dioses</p>
     </header>
 
-<main class="contenedor-principal">
+    <main class="contenedor-principal">
         <section class="catalogo-grid">
-            <!-- Productos God of War -->
+            <!-- God of War 1 -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/1.jpg" alt="God of War I" class="img-card">
@@ -39,6 +39,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('God of War (2005)', 19.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- God of War 2 -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/2.jpg" alt="God of War II" class="img-card">
@@ -49,6 +50,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('God of War II', 19.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- God of War 3 -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/3.jpg" alt="God of War III" class="img-card">
@@ -59,6 +61,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('God of War III', 29.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Espadas del Caos -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/espadas del caos.jpg" alt="Espadas del Caos" class="img-card">
@@ -69,6 +72,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos 1:1', 350.00)">Añadir al Carrito</button>
             </article>
 
+            <!-- Espadas de Atenea -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/espadas de Atenea.jpg" alt="Espadas de Atenea" class="img-card">
@@ -79,6 +83,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Espadas de Atenea 1:1', 380.00)">Añadir al Carrito</button>
             </article>
 
+            <!-- Espadas del Exilio -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/espadas del exilio.jpg" alt="Espadas del Exilio" class="img-card">
@@ -89,7 +94,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Exilio 1:1', 400.00)">Añadir al Carrito</button>
             </article>
 
-            <!-- Nuevos Juegos Añadidos -->
+            <!-- Marvel Rivals -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/marvel rivals.jpg" alt="Marvel Rivals" class="img-card">
@@ -100,6 +105,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Marvel Rivals', 59.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Fortnite -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/fortnite.jpg" alt="Fortnite" class="img-card">
@@ -110,6 +116,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Fortnite', 19.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Minecraft -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/minecraft.jpg" alt="Minecraft" class="img-card">
@@ -120,6 +127,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Minecraft', 29.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Halo -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/halo.jpg" alt="Halo" class="img-card">
@@ -130,6 +138,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Halo', 59.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Horizon Forbidden West -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/horizon forbidden west.jpg" alt="Horizon Forbidden West" class="img-card">
@@ -140,6 +149,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Horizon Forbidden West', 69.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Gran Turismo -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/gran turismo.jpg" alt="Gran Turismo" class="img-card">
@@ -150,6 +160,7 @@
                 <button class="btn-comprar" onclick="agregarAlCarrito('Gran Turismo', 59.99)">Añadir al Carrito</button>
             </article>
 
+            <!-- Spider-Man -->
             <article class="card card-videojuego">
                 <div class="marco-imagen">
                     <img src="ima/spiderman.jpg" alt="Spider-Man" class="img-card">
@@ -161,33 +172,7 @@
             </article>
         </section>
 
-        <!-- Sección Carrito de Compras -->
-        <section class="seccion-carrito panel-griego">
-            <h2 class="titulo-carrito">🛒 Ofrendas Seleccionadas</h2>
-            <table class="tabla-carrito">
-                <thead>
-                    <tr>
-                        <th>Reliquia / Producto</th>
-                        <th>Tributo (Precio)</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-carrito">
-                </tbody>
-            </table>
-            
-            <div class="total-contenedor">
-                <strong>Tributo Total: $<span id="monto-total">0.00</span> USD</strong>
-            </div>
-
-            <div class="acciones-carrito">
-                <button onclick="vaciarCarrito()" class="btn-cancelar-compra">🗑 Vaciar Carrito</button>
-                <button onclick="posponerCompra()" class="btn-posponer-compra">⏱ Posponer Compra</button>
-                <button onclick="procederAlPago()" class="btn-proceder-pago">⚡ Reclamar Ofrenda</button>
-            </div>
-        </section>
-    </main>
-
+        <!-- Sección de Carrito Única -->
         <section class="seccion-carrito panel-griego">
             <h2 class="titulo-carrito">🛒 Ofrendas Seleccionadas</h2>
             <table class="tabla-carrito">
