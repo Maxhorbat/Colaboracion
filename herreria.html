@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of War - Herrería Divina</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+    <!-- Espaciado personalizado para separar las secciones y tarjetas -->
+    <style>
+        /* Separación de las cuadrículas y tarjetas */
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; /* Espacio uniforme entre tarjetas */
+            padding: 10px 0 30px 0;
+        }
+
+        /* Espaciado de los títulos de secciones */
+        .titulo-seccion {
+            color: #ff5555;
+            text-align: center;
+            margin: 45px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        /* Ajuste de margen interno para las tarjetas */
+        .card {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="barra-navegacion">
+        <div class="logo-omega">Ω</div>
+        <ul class="enlaces-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="videojuegos.html">Videojuegos</a></li>
+            <li><a href="herreria.html" class="activo">Herrería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="compras.html">Compras</a></li>
+        </ul>
+        <a href="login.html" class="btn-inicio-sesion">Iniciar Sesión</a>
+    </nav>
+
+    <header>
+        <h1>⚔️ Forja de la Herrería Divina ⚔️</h1>
+    </header>
+
+    <main style="padding: 20px;">
+
+        <!-- =========================================================
+             1. TRILOGÍA DE ESPADAS PRINCIPALES
+             ========================================================= -->
+        <h2 class="titulo-seccion">🔥 La Tríada del Caos (Espadas Emblemáticas)</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/espadas del caos.jpg" alt="Espadas del Caos" class="img-card">
+                <h2>Espadas del Caos (Escala 1:1)</h2>
+                <p>Forjadas en las profundidades del Hades por Ares. Cuchillas ligadas con cadenas a los brazos del guerrero.</p>
+                <div class="precio">$350.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos 1:1', 350.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas de Atenea.jpg" alt="Espadas de Atenea" class="img-card">
+                <h2>Espadas de Atenea (Escala 1:1)</h2>
+                <p>Cuchillas divinas entregadas por la Diosa de la Sabiduría al convertirse Kratos en el Dios de la Guerra.</p>
+                <div class="precio">$380.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas de Atenea 1:1', 380.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas del exilio.jpg" alt="Espadas del Exilio" class="img-card">
+                <h2>Espadas del Exilio (Escala 1:1)</h2>
+                <p>Otorgadas por el espectro de Atenea. Permiten invocar la falange de guerreros espartanos.</p>
+                <div class="precio">$400.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Exilio', 400.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+        <!-- =========================================================
+             2. GOD OF WAR 1
+             ========================================================= -->
+        <h2 class="titulo-seccion">🏛️ Armas de God of War (2005)</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/espadas del caos.jpg" alt="Espadas del Caos" class="img-card">
+                <h2>Espadas del Caos (Escala 1:1)</h2>
+                <p>Forjadas en las profundidades del Hades por Ares. Cuchillas ligadas con cadenas a los brazos del guerrero.</p>
+                <div class="precio">$350.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos 1:1', 350.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espada de artemisa.jpg" alt="Espada de Artemisa" class="img-card">
+                <h2>Espada de Artemisa</h2>
+                <p>Otorgada por la Diosa de la Caza. Una gran hoja curva imbuida de poder divino, capaz de infligir cortes devastadores.</p>
+                <div class="precio">$340.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espada de Artemisa', 340.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+
+        <!-- =========================================================
+             3. GOD OF WAR 2
+             ========================================================= -->
+        <h2 class="titulo-seccion">⚡ Armas de God of War II</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/espadas de Atenea.jpg" alt="Espadas de Atenea" class="img-card">
+                <h2>Espadas de Atenea (Escala 1:1)</h2>
+                <p>Cuchillas divinas entregadas por la Diosa de la Sabiduría al convertirse Kratos en el Dios de la Guerra.</p>
+                <div class="precio">$380.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas de Atenea 1:1', 380.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/hoja del olimpo.jpg" alt="Hoja del Olimpo" class="img-card">
+                <h2>Hoja del Olimpo</h2>
+                <p>La espada legendaria forjada por Zeus. Imbuida con el poder de los Dioses para poner fin a la Guerra de los Titanes.</p>
+                <div class="precio">$600.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Hoja del Olimpo', 600.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/martillo barbaro.jpg" alt="Martillo Bárbaro" class="img-card">
+                <h2>Martillo Bárbaro</h2>
+                <p>Arrebatado al Rey Bárbaro. Un martillo devastador capaz de invocar almas oscuras y aplastar a cualquier enemigo.</p>
+                <div class="precio">$360.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Martillo Bárbaro', 360.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/lanza del destino.jpg" alt="Lanza del Destino" class="img-card">
+                <h2>Lanza del Destino</h2>
+                <p>Arrebatada al Jinete del Enano Oscuro. Una lanza de doble hoja capaz de extenderse y disparar proyectiles de cristal púrpura.</p>
+                <div class="precio">$330.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Lanza del Destino', 330.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+
+        <!-- =========================================================
+             4. GOD OF WAR 3
+             ========================================================= -->
+        <h2 class="titulo-seccion">💀 Armería de la Venganza (God of War III)</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/espadas del exilio.jpg" alt="Espadas del Exilio" class="img-card">
+                <h2>Espadas del Exilio (Escala 1:1)</h2>
+                <p>Otorgadas por el espectro de Atenea. Permiten invocar la falange de guerreros espartanos.</p>
+                <div class="precio">$400.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Exilio', 400.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/garras de hades.jpg" alt="Garras de Hades" class="img-card">
+                <h2>Garras de Hades</h2>
+                <p>Arrebatadas al Dios del Inframundo. Capaces de arrancar y convocar las almas de los caídos.</p>
+                <div class="precio">$390.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Garras de Hades', 390.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/cestus de nemea.jpg" alt="Cestus de Nemea" class="img-card">
+                <h2>Cestus de Nemea</h2>
+                <p>Guanteletes con forma de león arrebatados a Hércules. Rompen la piedra de ónice con ondas de choque.</p>
+                <div class="precio">$420.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Cestus de Nemea', 420.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/latigo de nemesis.jpg" alt="Látigo de Némesis" class="img-card">
+                <h2>Látigo de Némesis</h2>
+                <p>Creado por el dios Hefesto. Cuchillas encadenadas que transmiten descargas de energía eléctrica.</p>
+                <div class="precio">$370.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Látigo de Némesis', 370.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/hoja del olimpo.jpg" alt="Hoja del Olimpo" class="img-card">
+                <h2>Hoja del Olimpo</h2>
+                <p>La espada legendaria forjada por Zeus. Imbuida con el poder de los Dioses para poner fin a la Guerra de los Titanes.</p>
+                <div class="precio">$600.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Hoja del Olimpo', 600.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/arco de apolo.jpg" alt="Arco de Apolo" class="img-card">
+                <h2>Arco de Apolo</h2>
+                <p>Obtenido de Peirithous en el Inframundo. Dispara flechas cargadas de fuego solar.</p>
+                <div class="precio">$250.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Arco de Apolo', 250.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/botas de hermes.jpg" alt="Botas de Hermes" class="img-card">
+                <h2>Botas de Hermes</h2>
+                <p>Arrebatadas al Mensajero de los Dioses. Otorgan velocidad deslumbrante para correr por paredes y embestir enemigos.</p>
+                <div class="precio">$320.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Botas de Hermes', 320.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+<!-- =========================================================
+             5. ERA NÓRDICA
+             ========================================================= -->
+        <h2 class="titulo-seccion">❄️ God of War 2018 ❄️</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/hacha leviatan.jpg" alt="Hacha Leviatán" class="img-card">
+                <h2>Hacha Leviatán</h2>
+                <p>Forjada por los hermanos Huldra (Brok y Sindri). Infundida con la magia del hielo de Niflheim.</p>
+                <div class="precio">$450.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Hacha Leviatán', 450.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas del caos 2018.jpg" alt="Espadas del Caos (Versión Nórdica)" class="img-card">
+                <h2>Espadas del Caos (Versión Nórdica)</h2>
+                <p>Desenterradas de su pasado en Grecia. Modificadas con runas nórdicas y empuñaduras de metal nórdico por los hermanos Huldra.</p>
+                <div class="precio">$420.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos (Versión Nórdica)', 420.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/arco atreus.jpg" alt="Arco de Garra" class="img-card">
+                <h2>Arco de Garra (Atreus)</h2>
+                <p>Tallado a mano por Faye y mejorado con runas y magia de luz/flechas de choque.</p>
+                <div class="precio">$280.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Arco de Garra (Atreus)', 280.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/escudo del guardian.jpg" alt="Escudo del Guardián" class="img-card">
+                <h2>Escudo del Guardián</h2>
+                <p>Regalo de bodas entregado a Kratos por Faye. Se despliega al instante para parar o golpear a los enemigos.</p>
+                <div class="precio">$310.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Escudo del Guardián', 310.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+            <!-- =========================================================
+             6. ERA NÓRDICA - EL RAGNAROCK
+             ========================================================= -->
+        <h2 class="titulo-seccion">❄️ Reliquias de Midgard God of War Ragnarök</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/hacha leviatan.jpg" alt="Hacha Leviatán" class="img-card">
+                <h2>Hacha Leviatán</h2>
+                <p>Forjada por los hermanos Huldra (Brok y Sindri). Infundida con la magia del hielo de Niflheim.</p>
+                <div class="precio">$450.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Hacha Leviatán', 450.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas del caos ragnarok.jpg" alt="Espadas del Caos (Ragnarök)" class="img-card">
+                <h2>Espadas del Caos (Edición Ragnarök)</h2>
+                <p>Mejoradas con el poder del Llama Elemental y la técnica "Látigo Rúnico". Diseñadas para desatar ráfagas de fuego destructivas durante el Gran Conflicto.</p>
+                <div class="precio">$430.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos (Ragnarök)', 430.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/arco atreus.jpg" alt="Arco de Garra" class="img-card">
+                <h2>Arco de Garra (Atreus)</h2>
+                <p>Tallado a mano por Faye y mejorado con runas y magia de luz/flechas de choque.</p>
+                <div class="precio">$280.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Arco de Garra (Atreus)', 280.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/escudo del guardian.jpg" alt="Escudo del Guardián" class="img-card">
+                <h2>Escudo del Guardián</h2>
+                <p>Regalo de bodas entregado a Kratos por Faye. Se despliega al instante para parar o golpear a los enemigos.</p>
+                <div class="precio">$310.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Escudo del Guardián', 310.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/mjolnir.jpg" alt="Mjölnir - Martillo de Thor" class="img-card">
+                <h2>Mjölnir (Martillo de Thor)</h2>
+                <p>Forjado por los hermanos Huldra. Una devastadora reliquia capaz de desatar truenos temibles y aplastar Gigantes.</p>
+                <div class="precio">$500.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Mjölnir (Martillo de Thor)', 500.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/lanza de draupnir.jpg" alt="Lanza de Draupnir" class="img-card">
+                <h2>Lanza de Draupnir</h2>
+                <p>Forjada por la Señora del Lago combinando el anillo Draupnir y la sangre de Kratos. Se multiplica infinitamente al ser arrojada.</p>
+                <div class="precio">$480.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Lanza de Draupnir', 480.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espada thrungva.jpg" alt="Thrúngva - Espada Mágica de Freya" class="img-card">
+                <h2>Thrúngva (Espada Mágica)</h2>
+                <p>La letal espada vánir perteneciente a la Reina Valquiria Freya. Forjada con poderosa magia ancestral, asesta estocadas rápidas y devastadoras.</p>
+                <div class="precio">$370.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Thrúngva (Espada de Freya)', 370.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+            <!-- =========================================================
+            7. GOD OF WAR RAGNARÖK: VALHALLA
+            ========================================================= -->
+        <h2 class="titulo-seccion">🛡️ Reliquias del Valhalla (God of War Ragnarök: Valhalla)</h2>
+        <section class="catalogo-grid">
+
+            <article class="card">
+                <img src="ima/hacha leviatan.jpg" alt="Hacha Leviatán" class="img-card">
+                <h2>Hacha Leviatán</h2>
+                <p>Forjada por los hermanos Huldra (Brok y Sindri). Infundida con la magia del hielo de Niflheim.</p>
+                <div class="precio">$450.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Hacha Leviatán', 450.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas del caos valhalla.jpg" alt="Espadas del Caos (Valhalla)" class="img-card">
+                <h2>Espadas del Caos (Santuario Valhalla)</h2>
+                <p>Manifestación espiritual del pasaporte al Olimpo dentro de las pruebas de la mente. Cintas e íconos modificados por los glifos de la memoria.</p>
+                <div class="precio">$440.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos (Valhalla)', 440.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/lanza de draupnir.jpg" alt="Lanza de Draupnir" class="img-card">
+                <h2>Lanza de Draupnir</h2>
+                <p>Forjada por la Señora del Lago combinando el anillo Draupnir y la sangre de Kratos. Se multiplica infinitamente al ser arrojada.</p>
+                <div class="precio">$480.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Lanza de Draupnir', 480.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/lanza y escudo tyr.jpg" alt="Lanza y Escudo Nórdicos de Týr" class="img-card">
+                <h2>Lanza y Escudo de Týr</h2>
+                <p>Armamento tradicional del Dios de la Guerra nórdico. Una lanza ceremonial de gran alcance emparejada con un escudo redondo diseñado para contrarrestar embestidas divinas.</p>
+                <div class="precio">$460.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Lanza y Escudo de Týr', 460.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/espadas khopesh tyr.jpg" alt="Espadas Khopesh de Týr" class="img-card">
+                <h2>Espadas Khopesh de Týr</h2>
+                <p>Hojas curvas inspiradas en los viajes de Týr por tierras egipcias. Diseñadas para enganchar los escudos enemigos y asestar cortes fluidos e imparables.</p>
+                <div class="precio">$450.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas Khopesh de Týr', 450.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/macuahuitl tyr.jpg" alt="Macuahuitl de Týr" class="img-card">
+                <h2>Macuahuitl de Týr</h2>
+                <p>Arma ceremonial azteca traída por Týr desde tierras mesoamericanas. Un garrote de madera alineado con navajas de obsidiana capaz de infligir cortes devastadores.</p>
+                <div class="precio">$470.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Macuahuitl de Týr', 470.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="ima/katana tyr.jpg" alt="Katana Japonesa de Týr" class="img-card">
+                <h2>Katana Japonesa de Týr</h2>
+                <p>Sable de filo único traído por Týr desde sus travesías por el Lejano Oriente. Diseñada para un arte marcial rápido, estocadas precisas y cortes rúnicos ceremoniales.</p>
+                <div class="precio">$490.00</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Katana Japonesa de Týr', 490.00)">Añadir al Carrito</button>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>⚔️ Diseño y Programación Web — Estilo God of War — Neyen Aharon Lovon Puma ⚔️</p>
+    </footer>
+
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carritoGOW')) || [];
+            carrito.push({ nombre, precio });
+            localStorage.setItem('carritoGOW', JSON.stringify(carrito));
+            alert(`¡${nombre} ha sido añadido al carrito de compras!`);
+        }
+    </script>
+</body>
+</html>

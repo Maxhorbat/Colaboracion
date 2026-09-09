@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of War - Finalizar Ofrenda</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="estilo-griego">
+
+    <nav class="barra-navegacion">
+        <div class="logo-omega">Ω</div>
+        <ul class="enlaces-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="videojuegos.html">Videojuegos</a></li>
+            <li><a href="herreria.html">Herrería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="compras.html">Compras</a></li>
+        </ul>
+        <a href="login.html" class="btn-inicio-sesion">Iniciar Sesión</a>
+    </nav>
+
+    <header class="cabecera-griega">
+        <h1>⚔️ TRIBUTO Y RITO DE PAGO ⚔️</h1>
+        <p class="subtitulo-griego">Ingresa tus datos para sellar el pacto con los dioses</p>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="contenedor-checkout panel-griego">
+            <h2 class="titulo-seccion-griega">📜 Resumen del Pacto</h2>
+            
+            <div class="resumen-pedido-griego">
+                <ul id="items-checkout" class="lista-items-griega"></ul>
+                <div class="separador-dorado"></div>
+                <div class="total-checkout-contenedor">
+                    Total del Tributo: $<span id="total-checkout">0.00</span> USD
+                </div>
+            </div>
+
+            <form onsubmit="completarOrden(event)" class="formulario-griego">
+                <h3 class="subtitulo-formulario">🏛️ Información del Espartano</h3>
+                
+                <div class="grupo-form">
+                    <label for="nombre-pago">Nombre Completo:</label>
+                    <input type="text" id="nombre-pago" required placeholder="Ej: Kratos de Esparta">
+                </div>
+
+                <div class="grupo-form">
+                    <label for="direccion">Dirección del Enclave / Envío:</label>
+                    <input type="text" id="direccion" required placeholder="Reino, Ciudad, Calle">
+                </div>
+
+                <div class="grupo-form">
+                    <label for="metodo">Método de Ofrenda:</label>
+                    <select id="metodo" required>
+                        <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="transferencia">Transferencia Bancaria Divina</option>
+                    </select>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="numero-tarjeta">Número de Tarjeta / Cripta:</label>
+                    <input type="text" id="numero-tarjeta" required placeholder="•••• •••• •••• ••••">
+                </div>
+
+                <div class="acciones-checkout">
+                    <button type="button" onclick="cancelarPago()" class="btn-cancelar-compra">
+                        ✖ Cancelar Pacto
+                    </button>
+                    <button type="submit" class="btn-proceder-pago btn-confirmar-pago">
+                        ⚡ Confirmar y Pagar
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-griego">
+        <p>⚔️ Templo del Guerrero — Estilo God of War — Neyen Aharon Lovon Puma ⚔️</p>
+    </footer>
+
+    <script>
+        const carrito = JSON.parse(localStorage.getItem('carritoGOW')) || [];
+        const lista = document.getElementById('items-checkout');
+        let total = 0;
+
+        if (carrito.length === 0) {
+            alert('No hay reliquias en el carrito.');
+            window.location.href = 'compras.html';
+        }
+
+        carrito.forEach(prod => {
+            total += prod.precio;
+            const li = document.createElement('li');
+            li.className = 'item-resumen';
+            li.innerHTML = `<span>${prod.nombre}</span><span class="texto-oro">$${prod.precio.toFixed(2)}</span>`;
+            lista.appendChild(li);
+        });
+
+        document.getElementById('total-checkout').innerText = total.toFixed(2);
+
+        function cancelarPago() {
+            if (confirm('¿Deseas cancelar el proceso de pago y regresar al catálogo de compras?')) {
+                window.location.href = 'compras.html';
+            }
+        }
+
+        function completarOrden(e) {
+            e.preventDefault();
+            alert('¡El tributo ha sido aceptado por los dioses! Tu pedido ha sido procesado con éxito.');
+            localStorage.removeItem('carritoGOW');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

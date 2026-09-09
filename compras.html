@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of War - Tienda del Olimpo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="estilo-griego">
+
+    <nav class="barra-navegacion">
+        <div class="logo-omega">Ω</div>
+        <ul class="enlaces-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="videojuegos.html">Videojuegos</a></li>
+            <li><a href="herreria.html">Herrería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="compras.html" class="activo">Compras</a></li>
+        </ul>
+        <a href="login.html" class="btn-inicio-sesion">Iniciar Sesión</a>
+    </nav>
+
+    <header class="cabecera-griega">
+        <h1>⚔️ MERCADO DEL OLIMPO ⚔️</h1>
+        <p class="subtitulo-griego">Adquiere las reliquias y tributos de los dioses</p>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="catalogo-grid">
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/1.jpg" alt="God of War I" class="img-card">
+                </div>
+                <h2>God of War (2005)</h2>
+                <p>El inicio de la venganza contra el Dios de la Guerra.</p>
+                <div class="precio">$19.99 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('God of War (2005)', 19.99)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/2.jpg" alt="God of War II" class="img-card">
+                </div>
+                <h2>God of War II</h2>
+                <p>El destino de las Parcas en tus manos.</p>
+                <div class="precio">$19.99 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('God of War II', 19.99)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/3.jpg" alt="God of War III" class="img-card">
+                </div>
+                <h2>God of War III</h2>
+                <p>La caída definitiva del Olimpo Remasterizada.</p>
+                <div class="precio">$29.99 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('God of War III', 29.99)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/espadas del caos.jpg" alt="Espadas del Caos" class="img-card">
+                </div>
+                <h2>Espadas del Caos (1:1)</h2>
+                <p>Réplica exacta forjada en las profundidades del Hades.</p>
+                <div class="precio">$350.00 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos 1:1', 350.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/espadas de Atenea.jpg" alt="Espadas de Atenea" class="img-card">
+                </div>
+                <h2>Espadas de Atenea (1:1)</h2>
+                <p>Réplica sagrada con grabados en bronce y oro divino.</p>
+                <div class="precio">$380.00 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas de Atenea 1:1', 380.00)">Añadir al Carrito</button>
+            </article>
+
+            <article class="card card-griega">
+                <div class="marco-imagen">
+                    <img src="ima/espadas del exilio.jpg" alt="Espadas del Exilio" class="img-card">
+                </div>
+                <h2>Espadas del Exilio (1:1)</h2>
+                <p>Armas otorgadas por el espectro de Atenea.</p>
+                <div class="precio">$400.00 USD</div>
+                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Exilio 1:1', 400.00)">Añadir al Carrito</button>
+            </article>
+        </section>
+
+        <section class="seccion-carrito panel-griego">
+            <h2 class="titulo-carrito">🛒 Ofrendas Seleccionadas</h2>
+            <table class="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Reliquia / Producto</th>
+                        <th>Tributo (Precio)</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-carrito">
+                </tbody>
+            </table>
+            
+            <div class="total-contenedor">
+                <strong>Tributo Total: $<span id="monto-total">0.00</span> USD</strong>
+            </div>
+
+            <div class="acciones-carrito">
+                <button onclick="vaciarCarrito()" class="btn-cancelar-compra">🗑 Vaciar Carrito</button>
+                <button onclick="posponerCompra()" class="btn-posponer-compra">⏱ Posponer Compra</button>
+                <button onclick="procederAlPago()" class="btn-proceder-pago">⚡ Reclamar Ofrenda</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-griego">
+        <p>⚔️ Templo del Guerrero — Estilo God of War — Neyen Aharon Lovon Puma ⚔️</p>
+    </footer>
+
+    <script>
+        let carrito = JSON.parse(localStorage.getItem('carritoGOW')) || [];
+
+        function guardarYRenderizar() {
+            localStorage.setItem('carritoGOW', JSON.stringify(carrito));
+            const lista = document.getElementById('lista-carrito');
+            lista.innerHTML = '';
+            let total = 0;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<tr><td colspan="3" class="carrito-vacio">El carrito está vacío</td></tr>';
+            } else {
+                carrito.forEach((prod, index) => {
+                    total += prod.precio;
+                    const fila = document.createElement('tr');
+                    fila.innerHTML = `
+                        <td>${prod.nombre}</td>
+                        <td class="texto-oro">$${prod.precio.toFixed(2)}</td>
+                        <td><button class="btn-eliminar" onclick="eliminarDelCarrito(${index})">Descartar</button></td>
+                    `;
+                    lista.appendChild(fila);
+                });
+            }
+
+            document.getElementById('monto-total').innerText = total.toFixed(2);
+        }
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre, precio });
+            guardarYRenderizar();
+        }
+
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            guardarYRenderizar();
+        }
+
+        function vaciarCarrito() {
+            if (carrito.length === 0) return;
+            if (confirm('¿Deseas purgar todas las ofrendas del carrito?')) {
+                carrito = [];
+                guardarYRenderizar();
+            }
+        }
+
+        function posponerCompra() {
+            if (carrito.length === 0) {
+                alert('No tienes productos para posponer.');
+                return;
+            }
+            alert('Tus reliquias han sido guardadas. Podrás continuar tu compra más adelante.');
+            window.location.href = 'index.html';
+        }
+
+        function procederAlPago() {
+            if (carrito.length === 0) {
+                alert('¡El carrito está vacío!');
+                return;
+            }
+            window.location.href = 'checkout.html';
+        }
+
+        guardarYRenderizar();
+    </script>
+</body>
+</html>
