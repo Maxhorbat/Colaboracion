@@ -3,421 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>God of War - Tienda del Olimpo</title>
+    <title>Gamer Zone - Contacto</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos de proyección para el modal */
-        .modal-proyeccion {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(6px);
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Contenedor flotante con la tarjeta proyectada */
-        .marco-proyectado {
-            position: relative;
-            background: rgba(20, 15, 15, 0.95);
-            border: 2px solid #b8860b;
-            border-radius: 12px;
-            padding: 25px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 0 35px rgba(255, 69, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.4);
-            animation: efectoProyeccion 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            text-align: center;
-            color: #f0e6d2;
-        }
-
-        .marco-proyectado img {
-            max-width: 100%;
-            max-height: 50vh;
-            border-radius: 8px;
-            border: 1px solid #8b0000;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-
-        .marco-proyectado h3 {
-            font-family: 'Cinzel', serif;
-            color: #ffd700;
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-        }
-
-        .marco-proyectado p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #d1c7b7;
-        }
-
-        /* Animación estilo holograma/proyección */
-        @keyframes efectoProyeccion {
-            0% {
-                opacity: 0;
-                transform: scale(0.3) translateY(40px);
-                filter: brightness(2) blur(8px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-                filter: brightness(1) blur(0);
-            }
-        }
-
-        /* Botón cerrar flotante */
-        .btn-cerrar-proyeccion {
-            position: absolute;
-            top: 10px;
-            right: 18px;
-            color: #ffd700;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .btn-cerrar-proyeccion:hover {
-            color: #ff4500;
-        }
-
-        /* Cursor interactivo en las tarjetas */
-        .img-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .img-card:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="estilo-griego">
+<body>
 
+    <!-- NAVEGACIÓN -->
     <nav class="barra-navegacion">
-        <div class="logo-omega">Ω</div>
+        <div class="logo-omega">🎮</div>
         <ul class="enlaces-nav">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="videojuegos.html">Videojuegos</a></li>
             <li><a href="herreria.html">Herrería</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="compras.html" class="activo">Compras</a></li>
+            <li><a href="contacto.html" class="activo">Contacto</a></li>
+            <li><a href="compras.html">Compras</a></li>
         </ul>
         <a href="login.html" class="btn-inicio-sesion">Iniciar Sesión</a>
     </nav>
 
-    <header class="cabecera-griega">
-        <h1>⚔️ MERCADO DEL OLIMPO ⚔️</h1>
-        <p class="subtitulo-griego">Adquiere las reliquias y tributos de los dioses</p>
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>✉️ CANAL DE COMUNICACIÓN GAMER ✉️</h1>
     </header>
 
-    <main class="contenedor-principal">
-        <section class="catalogo-grid">
-            
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/1.jpg" alt="God of War I" class="img-card" 
-                         data-titulo="God of War (2005)" 
-                         data-descripcion="Sigue el sangriento viaje de Kratos, un guerrero espartano marcado por la tragedia que busca venganza contra Ares, el Dios de la Guerra, abriéndose paso entre hordas mitológicas." 
-                         onclick="proyectarImagen(this)">
+    <main>
+        <!-- SECCIÓN DE CONTACTO -->
+        <h2 class="titulo-seccion">MÁNDANOS UN MENSAJE</h2>
+        <section class="form-contacto">
+            <form onsubmit="procesarContacto(event)">
+                <p style="color: var(--texto-apagado); margin-bottom: 20px; text-align: center;">
+                    ¿Tienes dudas sobre pedidos, sugerencias o consultas de soporte? Escríbenos y te responderemos a la brevedad.
+                </p>
+                
+                <div class="grupo-form">
+                    <label for="nombre-contacto">Nombre o GamerTag:</label>
+                    <input type="text" id="nombre-contacto" required placeholder="Ej: PlayerOne">
                 </div>
-                <h2>God of War (2005)</h2>
-                <p>El inicio de la venganza contra el Dios de la Guerra.</p>
-                <div class="precio">$19.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('God of War (2005)', 19.99)">Añadir al Carrito</button>
-            </article>
 
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/2.jpg" alt="God of War II" class="img-card" 
-                         data-titulo="God of War II" 
-                         data-descripcion="Tras ser traicionado por Zeus, Kratos viaja hasta los confines de la Tierra para desafiar al propio Destino y cambiar el pasado con el poder de las Hermanas del Destino." 
-                         onclick="proyectarImagen(this)">
+                <div class="grupo-form">
+                    <label for="correo-contacto">Correo Electrónico:</label>
+                    <input type="email" id="correo-contacto" required placeholder="usuario@correo.com">
                 </div>
-                <h2>God of War II</h2>
-                <p>El destino de las Parcas en tus manos.</p>
-                <div class="precio">$19.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('God of War II', 19.99)">Añadir al Carrito</button>
-            </article>
 
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/3.jpg" alt="God of War III" class="img-card" 
-                         data-titulo="God of War III" 
-                         data-descripcion="El electrizante desenlace de la trilogía original. Kratos escala el Monte Olimpo a lomos de los Titanes para desatar una carnicería definitiva contra los dioses griegos." 
-                         onclick="proyectarImagen(this)">
+                <div class="grupo-form">
+                    <label for="asunto-contacto">Asunto:</label>
+                    <input type="text" id="asunto-contacto" required placeholder="Ej: Consulta sobre soporte / Devoluciones">
                 </div>
-                <h2>God of War III</h2>
-                <p>La caída definitiva del Olimpo Remasterizada.</p>
-                <div class="precio">$29.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('God of War III', 29.99)">Añadir al Carrito</button>
-            </article>
 
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/espadas del caos.jpg" alt="Espadas del Caos" class="img-card" 
-                         data-titulo="Espadas del Caos (1:1)" 
-                         data-descripcion="Las legendarias hojas dobles unidas por cadenas encarnadas en la carne de Kratos. Forjadas por el mismísimo Ares en el Inframundo con fuego mítico." 
-                         onclick="proyectarImagen(this)">
+                <div class="grupo-form">
+                    <label for="mensaje-contacto">Mensaje:</label>
+                    <textarea id="mensaje-contacto" required placeholder="Escribe tu mensaje o consulta detallada aquí..."></textarea>
                 </div>
-                <h2>Espadas del Caos (1:1)</h2>
-                <p>Réplica exacta forjada en las profundidades del Hades.</p>
-                <div class="precio">$350.00 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Caos 1:1', 350.00)">Añadir al Carrito</button>
-            </article>
 
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/espadas de Atenea.jpg" alt="Espadas de Atenea" class="img-card" 
-                         data-titulo="Espadas de Atenea (1:1)" 
-                         data-descripcion="Armas divinas impregnadas con la energía dorada de Atenea. Otorgadas a Kratos tras convertirse en el nuevo Dios de la Guerra." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Espadas de Atenea (1:1)</h2>
-                <p>Réplica sagrada con grabados en bronce y oro divino.</p>
-                <div class="precio">$380.00 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas de Atenea 1:1', 380.00)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/espadas del exilio.jpg" alt="Espadas del Exilio" class="img-card" 
-                         data-titulo="Espadas del Exilio (1:1)" 
-                         data-descripcion="Forjadas para liderar el asalto al Olimpo. Emiten un fuego dorado capaz de desgarrar incluso la carne de los Titanes y Dioses supremos." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Espadas del Exilio (1:1)</h2>
-                <p>Armas otorgadas por el espectro de Atenea.</p>
-                <div class="precio">$400.00 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Espadas del Exilio 1:1', 400.00)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/marvel rivals.jpg" alt="Marvel Rivals" class="img-card" 
-                         data-titulo="Marvel Rivals" 
-                         data-descripcion="Un dinámico Hero Shooter táctico en tercera persona (6v6) donde héroes y villanos del multiverso Marvel unen fuerzas y poderes en mapas totalmente destructibles." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Marvel Rivals</h2>
-                <p>Enfréntate en batallas épicas con los héroes y villanos del universo Marvel.</p>
-                <div class="precio">$59.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Marvel Rivals', 59.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/fortnite.jpg" alt="Fortnite" class="img-card" 
-                         data-titulo="Fortnite" 
-                         data-descripcion="El popular Battle Royale donde 100 jugadores caen en una isla para construir, recolectar recursos y combatir hasta que solo quede un vencedor o escuadrón." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Fortnite</h2>
-                <p>Sobrevive y sé el último en pie en este dinámico Battle Royale.</p>
-                <div class="precio">$19.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Fortnite', 19.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/minecraft.jpg" alt="Minecraft" class="img-card" 
-                         data-titulo="Minecraft" 
-                         data-descripcion="Un mundo abierto de bloques infinitos que fomenta la creatividad, la exploración y la supervivencia construyendo fortalezas y enfrentando criaturas nocturnas." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Minecraft</h2>
-                <p>Construye, explora y sobrevive en un mundo infinito de bloques.</p>
-                <div class="precio">$29.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Minecraft', 29.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/halo.jpg" alt="Halo" class="img-card" 
-                         data-titulo="Halo" 
-                         data-descripcion="Acompaña al Jefe Maestro (Master Chief) en una legendaria odisea de ciencia ficción para salvar a la humanidad de la alianza alienígena Covenant y la amenaza de los Halo." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Halo</h2>
-                <p>Lidera la lucha de la humanidad como el legendario Master Chief.</p>
-                <div class="precio">$59.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Halo', 59.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/horizon forbidden west.jpg" alt="Horizon Forbidden West" class="img-card" 
-                         data-titulo="Horizon Forbidden West" 
-                         data-descripcion="Aloy se aventura en las majestuosas y peligrosas tierras del Oeste Prohibido, enfrentando impactantes máquinas colosales para detener una plaga que amenaza la Tierra." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Horizon Forbidden West</h2>
-                <p>Acompaña a Aloy a explorar las fronteras del Oeste Prohibido.</p>
-                <div class="precio">$69.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Horizon Forbidden West', 69.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/gran turismo.jpg" alt="Gran Turismo" class="img-card" 
-                         data-titulo="Gran Turismo" 
-                         data-descripcion="El simulador real de conducción de referencia mundial. Diseñado para ofrecer una experiencia ultrarrealista al volante de los vehículos más veloces del planeta." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Gran Turismo</h2>
-                <p>Siente la adrenalina y la precisión en el simulador de conducción definitivo.</p>
-                <div class="precio">$59.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Gran Turismo', 59.99)">Añadir al Carrito</button>
-            </article>
-
-            <article class="card card-videojuego">
-                <div class="marco-imagen">
-                    <img src="ima/spiderman.jpg" alt="Spider-Man" class="img-card" 
-                         data-titulo="Marvel's Spider-Man" 
-                         data-descripcion="Ponte en la piel de Peter Parker y recorre la impresionante ciudad de Nueva York balanceándote en redes mientras enfrentas a temibles villanos." 
-                         onclick="proyectarImagen(this)">
-                </div>
-                <h2>Spider-Man</h2>
-                <p>Balancéate por Nueva York y combate el crimen como el héroe arácnido.</p>
-                <div class="precio">$69.99 USD</div>
-                <button class="btn-comprar" onclick="agregarAlCarrito('Spider-Man', 69.99)">Añadir al Carrito</button>
-            </article>
-
-        </section>
-
-        <!-- Carrito de Compras -->
-        <section class="seccion-carrito panel-griego">
-            <h2 class="titulo-carrito">🛒 Ofrendas Seleccionadas</h2>
-            <table class="tabla-carrito">
-                <thead>
-                    <tr>
-                        <th>Reliquia / Producto</th>
-                        <th>Tributo (Precio)</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-carrito">
-                </tbody>
-            </table>
-            
-            <div class="total-contenedor">
-                <strong>Tributo Total: $<span id="monto-total">0.00</span> USD</strong>
-            </div>
-
-            <div class="acciones-carrito">
-                <button onclick="vaciarCarrito()" class="btn-cancelar-compra">🗑 Vaciar Carrito</button>
-                <button onclick="posponerCompra()" class="btn-posponer-compra">⏱ Posponer Compra</button>
-                <button onclick="procederAlPago()" class="btn-proceder-pago">⚡ Reclamar Ofrenda</button>
-            </div>
+                <button type="submit" class="btn-inicio-sesion" style="width: 100%;">Enviar Mensaje</button>
+            </form>
         </section>
     </main>
 
-    <!-- Estructura de Proyección Flotante con Información del Juego -->
-    <div id="pantalla-proyeccion" class="modal-proyeccion" onclick="cerrarProyeccion()">
-        <div class="marco-proyectado" onclick="event.stopPropagation()">
-            <span class="btn-cerrar-proyeccion" onclick="cerrarProyeccion()">&times;</span>
-            <img id="img-proyectada" src="" alt="Proyección">
-            <h3 id="titulo-proyectado"></h3>
-            <p id="descripcion-proyectada"></p>
-        </div>
-    </div>
-
-    <footer class="footer-griego">
-        <p>⚔️ Templo del Guerrero — Estilo God of War — Neyen Aharon Lovon Puma ⚔️</p>
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>⚔️ Portal Multigénero Gamer — Neyen Aharon Lovon Puma ⚔️</p>
     </footer>
 
     <script>
-        let carrito = JSON.parse(localStorage.getItem('carritoGOW')) || [];
-
-        function guardarYRenderizar() {
-            localStorage.setItem('carritoGOW', JSON.stringify(carrito));
-            const lista = document.getElementById('lista-carrito');
-            lista.innerHTML = '';
-            let total = 0;
-
-            if (carrito.length === 0) {
-                lista.innerHTML = '<tr><td colspan="3" class="carrito-vacio">El carrito está vacío</td></tr>';
-            } else {
-                carrito.forEach((prod, index) => {
-                    total += prod.precio;
-                    const fila = document.createElement('tr');
-                    fila.innerHTML = `
-                        <td>${prod.nombre}</td>
-                        <td class="texto-oro">$${prod.precio.toFixed(2)}</td>
-                        <td><button class="btn-eliminar" onclick="eliminarDelCarrito(${index})">Descartar</button></td>
-                    `;
-                    lista.appendChild(fila);
-                });
-            }
-
-            document.getElementById('monto-total').innerText = total.toFixed(2);
+        function procesarContacto(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre-contacto').value;
+            alert(`¡Gracias ${nombre}! Tu mensaje ha sido recibido. Te responderemos al correo proporcionado.`);
+            e.target.reset();
         }
-
-        function agregarAlCarrito(nombre, precio) {
-            carrito.push({ nombre, precio });
-            guardarYRenderizar();
-        }
-
-        function eliminarDelCarrito(index) {
-            carrito.splice(index, 1);
-            guardarYRenderizar();
-        }
-
-        function vaciarCarrito() {
-            if (carrito.length === 0) return;
-            if (confirm('¿Deseas purgar todas las ofrendas del carrito?')) {
-                carrito = [];
-                guardarYRenderizar();
-            }
-        }
-
-        function posponerCompra() {
-            if (carrito.length === 0) {
-                alert('No tienes productos para posponer.');
-                return;
-            }
-            alert('Tus reliquias han sido guardadas. Podrás continuar tu compra más adelante.');
-            window.location.href = 'index.html';
-        }
-
-        function procederAlPago() {
-            if (carrito.length === 0) {
-                alert('¡El carrito está vacío!');
-                return;
-            }
-            window.location.href = 'checkout.html';
-        }
-
-        /* Función que toma la imagen y sus datos para mostrarlos en la pantalla flotante */
-        function proyectarImagen(elementoImg) {
-            const pantalla = document.getElementById('pantalla-proyeccion');
-            const imagen = document.getElementById('img-proyectada');
-            const titulo = document.getElementById('titulo-proyectado');
-            const descripcion = document.getElementById('descripcion-proyectada');
-
-            imagen.src = elementoImg.src;
-            titulo.innerText = elementoImg.getAttribute('data-titulo') || 'Información del juego';
-            descripcion.innerText = elementoImg.getAttribute('data-descripcion') || 'Sin descripción disponible.';
-
-            pantalla.style.display = 'flex';
-        }
-
-        function cerrarProyeccion() {
-            document.getElementById('pantalla-proyeccion').style.display = 'none';
-        }
-
-        guardarYRenderizar();
     </script>
 </body>
 </html>
