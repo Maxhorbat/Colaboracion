@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Zone - Tu Portal de Videojuegos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="barra-navegacion">
+        <div class="logo-omega">🎮</div>
+        <ul class="enlaces-nav">
+            <li><a href="index.html" class="activo">Inicio</a></li>
+            <li><a href="videojuegos.html">Videojuegos</a></li>
+            <li><a href="herreria.html">Herrería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="compras.html">Compras</a></li>
+        </ul>
+        <a href="login.html" class="btn-inicio-sesion">Iniciar Sesión</a>
+    </nav>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>👾 GAMER ZONE - EL UNIVERSO DE LOS VIDEOJUEGOS 👾</h1>
+    </header>
+
+    <main>
+        <!-- PARTE 1: PRESENTACIÓN DE LA PÁGINA -->
+        <section class="reto1">
+            <article class="caja">
+                <img src="ima/omega.png" alt="Icono Gamer" class="img-centrada">
+                <h2>BIENVENIDO A TU CENTRO GAMER</h2>
+                <p>
+                    Explora el punto de encuentro definitivo para apasionados del <strong>gaming</strong>. Ya seas fanático de las consolas de última generación, los clásicos retro, el PC Gaming o las experiencias inmersivas, en este portal encontrarás un catálogo variado, noticias del sector, réplicas coleccionables y un espacio interactivo para la comunidad.
+                </p>
+            </article>
+        </section>
+
+        <!-- PARTE 2: HISTORIA DE LOS VIDEOJUEGOS -->
+        <h2 class="titulo-seccion">📜 EVOLUCIÓN E HISTORIA DE LOS VIDEOJUEGOS</h2>
+        <section class="reto1">
+            <article class="caja" style="max-width: 900px;">
+                <h2>De los Salones Arcade a la Era Digital</h2>
+                <p style="margin-bottom: 15px;">
+                    Desde los pioneros experimentos en los años 50 y la era dorada de los <em>Arcades</em> en los 70 y 80 con títulos icónicos como <strong>Pong</strong>, <strong>Pac-Man</strong> y <strong>Space Invaders</strong>, la industria del videojuego ha evolucionado hasta convertirse en la forma de entretenimiento masivo más grande del mundo.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    El salto al 3D en la década de los 90 revolucinó la narrativa e interactividad, dando paso a consolas legendarias y la expansión del juego en PC. Hoy en día, los videojuegos abarcan múltiples géneros: RPG, Acción, Estrategia, Deportes y eSports.
+                </p>
+                <p>
+                    Actualmente, el gaming combina gráficos ultra realistas, mundos abiertos masivos, realidad virtual y modalidades multijugador globales que conectan a millones de jugadores simultáneamente.
+                </p>
+            </article>
+        </section>
+
+        <!-- PARTE 3: UN PEQUEÑO VISTAZO DE LOS JUEGOS -->
+        <h2 class="titulo-seccion">🛡️ DESTACADOS EN DIVERSAS PLATAFORMAS</h2>
+        <section class="contenedor">
+            <article class="tarjeta">
+                <img src="ima/1.jpg" alt="Aventura y Acción" class="img-tarjeta">
+                <h2>Acción y Aventura</h2>
+                <p>Mundos abiertos, narrativas profundas y combate dinámico para los jugadores que buscan adrenalina e historias memorables.</p>
+                <div class="precio">PC / Consolas</div>
+                <a href="videojuegos.html" class="btn-comprar" style="text-align:center; text-decoration:none;">Ver Catálogo</a>
+            </article>
+
+            <article class="tarjeta">
+                <img src="ima/2.jpg" alt="Rol y Estrategia" class="img-tarjeta">
+                <h2>RPG y Estrategia</h2>
+                <p>Toma el control de tu destino, gestiona recursos y desarrolla a tus personajes en batallas tácticas de gran escala.</p>
+                <div class="precio">PC / Consolas</div>
+                <a href="videojuegos.html" class="btn-comprar" style="text-align:center; text-decoration:none;">Ver Catálogo</a>
+            </article>
+
+            <article class="tarjeta">
+                <img src="ima/3.jpg" alt="Clásicos y Retro" class="img-tarjeta">
+                <h2>Clásicos y Retro</h2>
+                <p>Revive las joyas que definieron generaciones. Desde las épocas de 8 y 16 bits hasta los grandes títulos de antaño.</p>
+                <div class="precio">Multiplataforma</div>
+                <a href="videojuegos.html" class="btn-comprar" style="text-align:center; text-decoration:none;">Ver Catálogo</a>
+            </article>
+        </section>
+
+        <!-- PARTE 4: SECCIÓN DE SOLICITUDES PARA VIDEOJUEGOS -->
+        <h2 class="titulo-seccion">🏛️ SOLICITUD DE TÍTULOS Y COLECCIONABLES</h2>
+        <section class="form-contacto">
+            <form onsubmit="procesarSolicitud(event)">
+                <p style="color: var(--texto-apagado); margin-bottom: 20px; text-align: center;">
+                    ¿Buscas un juego en específico, un lanzamiento reciente o un clásico difícil de conseguir? Envíanos tu petición.
+                </p>
+                
+                <div class="grupo-form">
+                    <label for="solicitante">Nombre o GamerTag:</label>
+                    <input type="text" id="solicitante" required placeholder="Ej: PlayerOne">
+                </div>
+
+                <div class="grupo-form">
+                    <label for="email-solicitud">Correo Electrónico:</label>
+                    <input type="email" id="email-solicitud" required placeholder="usuario@correo.com">
+                </div>
+
+                <div class="grupo-form">
+                    <label for="juego-solicitado">Videojuego o Producto Deseado:</label>
+                    <input type="text" id="juego-solicitado" required placeholder="Ej: Elden Ring / Minecraft / Zelda">
+                </div>
+
+                <div class="grupo-form">
+                    <label for="detalles-solicitud">Plataforma y Detalles:</label>
+                    <textarea id="detalles-solicitud" placeholder="Especifica la plataforma (PC, PlayStation, Xbox, Switch) o si buscas una edición especial..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-inicio-sesion" style="width: 100%;">Enviar Solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>⚔️ Portal Multigénero Gamer — Neyen Aharon Lovon Puma ⚔️</p>
+    </footer>
+
+    <script>
+        function procesarSolicitud(e) {
+            e.preventDefault();
+            const juego = document.getElementById('juego-solicitado').value;
+            alert(`¡Tu petición para "${juego}" ha sido recibida! Nos pondremos en contacto contigo pronto.`);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
