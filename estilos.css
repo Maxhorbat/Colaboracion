@@ -619,3 +619,113 @@ footer p {
     box-shadow: var(--sombra-neon);
     transform: translateY(-2px);
 }
+
+/* =========================================================
+   MEDIA QUERIES - DISEÑO RESPONSIVO (MÓVIL, TABLET, PC)
+   ========================================================= */
+
+/* --- TABLETS Y PANTALLAS MEDIANAS (Hasta 1024px) --- */
+@media (max-width: 1024px) {
+    main {
+        padding: 15px;
+    }
+
+    .seccion-video,
+    .seccion-carrito,
+    .panel-griego,
+    .contenedor-checkout {
+        max-width: 95%;
+    }
+}
+
+/* --- TABLETS PEQUEÑAS Y CELULARES GRANDES (Hasta 768px) --- */
+@media (max-width: 768px) {
+    /* Navbar adaptable */
+    .barra-navegacion {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .enlaces-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .enlaces-nav a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    /* Grillas del catálogo */
+    .contenedor, 
+    .catalogo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    /* Ajustes de tipografía */
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.4rem;
+        margin: 30px 0 15px 0;
+    }
+
+    /* Formulario de contacto y login */
+    .form-contacto, 
+    .contenedor-login {
+        padding: 25px 20px;
+        width: 95%;
+    }
+
+    /* Ajustes de tabla en el carrito */
+    .tabla-carrito th, 
+    .tabla-carrito td {
+        padding: 8px 5px;
+        font-size: 0.85rem;
+    }
+
+    .acciones-carrito,
+    .acciones-checkout {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .acciones-carrito button,
+    .acciones-checkout button {
+        width: 100%;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES E IPHONES (Hasta 480px) --- */
+@media (max-width: 480px) {
+    .barra-navegacion {
+        padding: 10px;
+    }
+
+    /* Forzar grilla a una sola columna */
+    .contenedor, 
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caja {
+        padding: 20px 15px;
+    }
+
+    /* Ajuste para pantallas muy pequeñas en la tabla del carrito */
+    .tabla-carrito {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .btn-inicio-sesion {
+        width: 100%;
+    }
+}
